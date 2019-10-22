@@ -1,0 +1,24 @@
+<h2>Lista de Pessoas</h2>
+<div class="container">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pessoa of pessoas | async">
+                <td>{{pessoa.nome}}</td>
+                <td>{{pessoa.email}}</td>
+                <td>
+                    <button (click)="editarPessoa(pessoa.id)" class="btn btn-warning">Editar</button>
+                    <button (click)="detalhePessoa(pessoa.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+                    <button (click)="deletarPessoa(pessoa.id)" class="btn btn-danger" style="margin-left: 10px">Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
