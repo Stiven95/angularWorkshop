@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { DetalhePessoaComponent } from './detalhe-pessoa/detalhe-pessoa.component';
 import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
 import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
+import { AlertaComponent } from './alerta/alerta.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
     FooterComponent,
     DetalhePessoaComponent,
     EditarPessoaComponent,
-    ListarPessoaComponent
+    ListarPessoaComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,

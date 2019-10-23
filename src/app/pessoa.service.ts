@@ -16,10 +16,12 @@ export class PessoaService {
     return this.http.get(`${this.url}/${id}`);
   }
 
+  // tslint:disable-next-line: ban-types
   criarPessoa(pessoa: Object): Observable<Object> {
     return this.http.post(`${this.url}`, pessoa);
   }
 
+  // tslint:disable-next-line: ban-types
   editarPessoa(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.url}/${id}`, value);
   }

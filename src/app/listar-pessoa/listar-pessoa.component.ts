@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { Pessoa } from './../pessoa';
 import { PessoaService } from '../pessoa.service';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -17,6 +18,13 @@ export class ListarPessoaComponent implements OnInit {
 
   ngOnInit() {
     this.reloadData();
+    // tslint:disable-next-line: only-arrow-functions
+    $(document).ready(function() {
+      // tslint:disable-next-line: only-arrow-functions
+      $('#fecharAlerta').fadeTo(3000, 500).slideUp(500, function() {
+        $('#fecharAlerta').slideUp(500);
+      });
+    });
   }
 
   reloadData() {
