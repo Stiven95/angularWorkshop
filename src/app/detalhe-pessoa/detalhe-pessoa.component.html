@@ -1,1 +1,23 @@
-<p>detalhe-pessoa works!</p>
+<h2>Detalhes Pessoa</h2> 
+
+<hr/>
+<div *ngIf="pessoa">
+  <div>
+    <label><b>Id: </b></label> {{pessoa.id}}
+  </div>
+  <div>
+    <label><b>Nome: </b></label> {{pessoa.nome}}
+  </div>
+  <div>
+    <label><b>E-mail: </b></label> {{pessoa.email}}
+  </div>
+  <div>
+    <label><b>Descrição: </b></label> {{pessoa.descricao}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="listaPessoas()" class="btn btn-primary">Lista de Pessoas</button><br>
+
+

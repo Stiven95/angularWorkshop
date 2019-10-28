@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Pessoa } from './../app/pessoa';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class PessoaService {
 
   constructor(private http: HttpClient) { }
 
-  getPessoa(id: number): Observable<any> {
+  getPessoaPorId(id: number): Observable<any> {
     return this.http.get(`${this.url}/${id}`);
   }
 

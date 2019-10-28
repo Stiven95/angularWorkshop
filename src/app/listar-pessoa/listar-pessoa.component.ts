@@ -13,6 +13,9 @@ import * as $ from 'jquery';
 export class ListarPessoaComponent implements OnInit {
 
   pessoas: Observable<Pessoa[]>;
+  email: string;
+  nome: string;
+  id: number;
 
   constructor(private pessoaService: PessoaService, private router: Router) { }
 

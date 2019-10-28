@@ -1,1 +1,23 @@
-<p>editar-pessoa works!</p>
+<h2>Editar Pessoa</h2>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <div>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">     
+            <label for="nome">Nome</label>
+            <input [(ngModel)]="pessoa.nome" type="text" name="nome" class="form-control" id="nome">
+            
+            <label for="email">E-mail</label>
+            <input [(ngModel)]="pessoa.email" type="text" name="email" class="form-control" id="email">
+
+            <label for="descricao">Descrição</label>
+            <textarea [(ngModel)]="pessoa.descricao" name="descricao" class="form-control" id="descricao"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Salvar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
