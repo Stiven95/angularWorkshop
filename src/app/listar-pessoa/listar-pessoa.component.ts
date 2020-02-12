@@ -4,6 +4,7 @@ import { Pessoa } from './../pessoa';
 import { PessoaService } from '../pessoa.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { AlertaService } from '../alerta.service';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -17,7 +18,7 @@ export class ListarPessoaComponent implements OnInit {
   nome: string;
   id: number;
 
-  constructor(private pessoaService: PessoaService, private router: Router) { }
+  constructor(private pessoaService: PessoaService, private router: Router, private alertaService: AlertaService) { }
 
   ngOnInit() {
     this.reloadData();
@@ -44,11 +45,10 @@ export class ListarPessoaComponent implements OnInit {
 
   deletarPessoa(id: number) {
     this.pessoaService.deletarPessoa(id)
-      .subscribe(data => {
-        console.log(data);
-        this.reloadData();
-      },
-      error => console.log(error));
+    .subscribe(
+      data => { this.alertaService.success('Deletado com Sucesso!', true);
+                this.reloadData();
+      }, error => this.alertaService.error(error));
   }
 
 }

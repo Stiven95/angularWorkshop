@@ -20,7 +20,7 @@ export class EditarPessoaComponent implements OnInit {
   ngOnInit() {
     this.pessoa = new Pessoa();
 
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params.id;
 
     this.pessoaService.getPessoaPorId(this.id).subscribe(data => {
       this.pessoa = data;
